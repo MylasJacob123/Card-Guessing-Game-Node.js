@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 5rem;
+  background-color: #432818;
+}
+
+.outer-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110rem;
+  height: 60rem;
+  background-color: #99582a;
+  border: 0.13rem solid whitesmoke;
+  border-radius: 1.3rem;
+}
+
+.inner-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bb9457;
+  border: 0.13rem solid whitesmoke;
+  width: 106rem;
+  height: 56rem;
+  z-index: 1;
+  border-radius: 0.75rem;
+  gap: 10rem;
+}
+
+.game-board-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 6.275rem);
+  grid-template-rows: repeat(6, 8.125rem);
+  gap: 0.625rem;
+  z-index: 2;
+}
+
+.card {
+  width: 93%;
+  height: 93%;
+  background-color: #6f1d1b;
+  color: black;
+  cursor: pointer;
+  border: 0.13rem solid #ffe6a7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #432818;
+  border-radius: 0.75rem;
+  user-select: none;
+  position: relative;
+  perspective: 62.5rem;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 0.75rem;
+}
+
+.card-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: #6f1d1b;
+  color: #432818;
+}
+
+.card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: #ffe6a7;
+  color: #432818;
+  transform: rotateY(180deg);
+}
+
+.card.match {
+  background-color: #ffe6a7;
+  border: 0.1rem solid grey;
+  color: grey;
+  cursor: default;
+}
+
+#winMessage {
+  display: none;
+  text-align: center;
+  background-color: #99582a;
+  padding: 1.25rem;
+  border-radius: 0.613rem;
+}
+
+#resetButton {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    border: none;
+    color: whitesmoke;
+    background-color: #6f1d1b;
+    cursor: pointer;
+}
